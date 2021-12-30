@@ -47,8 +47,7 @@ print(a)
 print(b)
 ```
 additionally, `float`s are used instead of `double`s in python.
-### Note
-Python 3 has the ability to type annotate, or give 'soft' types to variables. An example is shown below. Python is dynamically typed by nature, but annotations allow for better understanding of code.
+#### Note: Python 3 has the ability to type annotate, or give 'soft' types to variables. An example is shown below. Python is dynamically typed by nature, but annotations allow for better understanding of code.
 ```python
 x: int = 5
 y: float = 10.0
@@ -316,5 +315,248 @@ print(len(x))
 # 3
 # 11
 ```
+
 the len() function returns the length of a string, a list, a tuple, a set, or a dictionary (in essence, any iterable). Java has seperate methods for each type but Python just has the universal len() function.
 
+
+## Loops
+### While Loops
+```java
+public class Program {
+
+    public static void main(String[] args) {
+        int x = 0;
+        while (x < 5) {
+            System.out.println(x);
+            x = x + 1;
+        }
+    }
+}
+```
+This is an example while loop, which prints out the values of x until x is equal to 5.
+```python
+x = 0
+while x < 5:
+    print(x)
+    x = x + 1
+```
+### For Loops
+```java
+public class Program {
+
+    public static void main(String[] args) {
+        for (int x = 0; x < 5; x = x + 1) {
+            System.out.println(x);
+        }
+    }
+}
+```
+This is an example for loop, which prints out the values of x until x is equal to 5.
+```python
+for x in range(0, 5):
+    print(x)
+```
+### For Loops with decrementing
+```java
+public class Program {
+
+    public static void main(String[] args) {
+        for (int x = 5; x > 0; x = x - 1) {
+            System.out.println(x);
+        }
+    }
+}
+```
+This is an example for loop, which prints out the values of x until x is equal to 5.
+```python
+for x in range(5, 0, -1):
+    print(x)
+```
+### `range()`
+`range()` is a function that returns a generator of numbers. It takes three arguments:
+1. The starting number (included)
+2. The ending number (excluded)
+3. The increment (optional)
+```python
+x = range(0, 5)
+print(x)
+# Ouputs:
+# [0, 1, 2, 3, 4]
+```
+
+### do-while Loops
+```java
+public class Program {
+
+    public static void main(String[] args) {
+        int x = 0;
+        do {
+            System.out.println(x);
+            x = x + 1;
+        } while (x < 5);
+    }
+}
+```
+This is an example do-while loop, which prints out the values of x until x is equal to 5.
+```python
+x = 0
+while True:
+    print(x)
+    x = x + 1
+    if x < 5: continue
+    else: break
+```
+
+### Traversal of a List
+```java
+public class Program {
+
+    public static void main(String[] args) {
+        int[] x = {1, 2, 3, 4, 5};
+        for (int i : x) {
+            System.out.println(i);
+        }
+    }
+}
+```
+This is an example for-each loop, which prints out the values in the array x.
+```python
+x = [1, 2, 3, 4, 5]
+for i in x:
+    print(i)
+```
+### Traversal of a Dictionary
+```python
+x = {
+    "key1": "value1",
+    "key2": "value2",
+    "key3": "value3"
+}
+for key, value in x.items():
+    print(key, value)
+```
+This is an example for-each loop, which prints out the keys and values in the dictionary x.
+
+### The `break` Statement
+```java
+public class Program {
+
+    public static void main(String[] args) {
+        for (int x = 0; x < 5; x = x + 1) {
+            if (x == 2) {
+                break;
+            }
+            System.out.println(x);
+        }
+    }
+}
+```
+The break statement is used to exit a loop. It is used to exit a for loop, while loop, or a do-while loop.
+```python
+x = 0
+while x < 5:
+    if x == 2:
+        break
+    print(x)
+    x = x + 1
+```
+
+### The `continue` Statement
+```java
+public class Program {
+
+    public static void main(String[] args) {
+        for (int x = 0; x < 5; x = x + 1) {
+            if (x == 2) {
+                continue;
+            }
+            System.out.println(x);
+        }
+    }
+}
+```
+The continue statement is used to skip the rest of the current iteration. It is used to skip the rest of a for loop, while loop, or a do-while loop.
+```python
+x = 0
+while x < 5:
+    if x == 2:
+        continue
+    print(x)
+    x = x + 1
+```
+
+## Functions
+### Function Basics
+```java
+public class Program {
+
+    public static void main(String[] args) {
+        int x = add(1, 2);
+        System.out.println(x);
+    }
+
+    public static int add(int a, int b) {
+        return a + b;
+    }
+}
+```
+This is an example of a function that adds two numbers and returns the result.
+```python
+def add(a, b):
+    return a + b
+```
+Functions in java are formatted:
+```java
+access_modifiers return_type function_name(typed_parameter_list) {
+    function_body
+}
+```
+#### Note: Access Modifiers are words like public private and protected. static can be used to make a function static (or accessable without an object) in java.
+Functions in python are formatted:
+```python
+def function_name(parameter_list):
+    function_body
+```
+Functions can be called by using the function name followed by parentheses.
+```python
+x = add(1, 2)
+print(x)
+```
+
+### The `return` Statement
+```java
+public class Program {
+
+    public static void main(String[] args) {
+        int x = add(1, 2);
+        System.out.println(x);
+    }
+
+    public static int add(int a, int b) {
+        return a + b;
+    }
+}
+```
+The return statement is used to return a value from a function, as opposed to the `System.out.println()` or `print()` functions, which are used to print values to the console.
+```python
+def add(a, b):
+    return a + b
+x = add(1, 2)
+print(x)
+```
+### The `pass` Statement in python
+```python
+def add(a, b):
+    pass
+```
+The pass statement is used when a statement is required syntactically but you do not want any command or code to execute. Used when a function is not completely implemented yet.
+
+Some also raise a NotImplementedError exception.
+```python
+def add(a, b):
+    raise NotImplementedError
+```
+
+
+## Pro Tip:
+Python doesn't need semicolons to end statements. ;)
